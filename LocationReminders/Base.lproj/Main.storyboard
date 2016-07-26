@@ -58,17 +58,8 @@
                                     <action selector="currenLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6qf-ji-pFJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="052-EI-2sI">
-                                <rect key="frame" x="447" y="72" width="133" height="30"/>
-                                <state key="normal" title="See Queue &amp; Stack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UQq-yQ-UOc" kind="show" id="kuy-Fo-kfo"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-7o-kam">
-                                <rect key="frame" x="0.0" y="112" width="600" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-7o-kam">
+                                <rect key="frame" x="300" y="112" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="0.86420039733333343" green="0.84612333382837079" blue="0.85046721315984453" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,7 +71,6 @@
                             <constraint firstItem="YcZ-Pt-5vh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CFE-xG-KmV"/>
                             <constraint firstItem="5Ci-7o-kam" firstAttribute="centerY" secondItem="URj-J5-gAT" secondAttribute="centerY" id="Cbi-yv-EcO"/>
                             <constraint firstItem="zjg-KH-Pae" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="bottom" constant="20" id="CkI-wf-qct"/>
-                            <constraint firstItem="052-EI-2sI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Flm-MX-WEM"/>
                             <constraint firstItem="5Ci-7o-kam" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L0a-rt-lAd"/>
                             <constraint firstItem="URj-J5-gAT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Mk9-qM-MW2"/>
                             <constraint firstAttribute="trailing" secondItem="YcZ-Pt-5vh" secondAttribute="trailing" constant="20" id="NI8-p4-z5a"/>
@@ -93,7 +83,6 @@
                             <constraint firstItem="Uu8-5X-ms1" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="bottom" constant="20" id="bjz-hW-Fih"/>
                             <constraint firstItem="YcZ-Pt-5vh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ecT-f2-Ng8"/>
                             <constraint firstAttribute="trailing" secondItem="5Ci-7o-kam" secondAttribute="trailing" id="gSh-tA-gJT"/>
-                            <constraint firstAttribute="trailing" secondItem="052-EI-2sI" secondAttribute="trailing" constant="20" id="jb2-wY-xqs"/>
                             <constraint firstAttribute="trailing" secondItem="Uu8-5X-ms1" secondAttribute="trailing" constant="20" id="juQ-Y2-nhN"/>
                             <constraint firstItem="URj-J5-gAT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qXc-1Z-tM3"/>
                             <constraint firstItem="5Ci-7o-kam" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="top" constant="8" id="xuA-qK-DZe"/>
@@ -117,157 +106,6 @@
             </objects>
             <point key="canvasLocation" x="1087" y="255"/>
         </scene>
-        <!--Data View Controller-->
-        <scene sceneID="z9u-nZ-OcP">
-            <objects>
-                <viewController storyboardIdentifier="QView" id="UQq-yQ-UOc" customClass="DataViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6ia-nK-eF2"/>
-                        <viewControllerLayoutGuide type="bottom" id="XX5-bq-2mT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bGj-rj-Bas">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queue View:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-hl-LRE">
-                                <rect key="frame" x="252" y="28" width="96.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queue Contents here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZ8-4y-Jj0">
-                                <rect key="frame" x="0.0" y="89" width="600" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter string to add to Q" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-PH-1zh">
-                                <rect key="frame" x="20" y="153" width="172.5" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="172.5" id="gxX-6C-Yd5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezq-tv-2PR">
-                                <rect key="frame" x="520" y="154" width="60" height="30"/>
-                                <state key="normal" title="Enqueue">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="enqueueButton:" destination="UQq-yQ-UOc" eventType="touchUpInside" id="mCy-dx-Xhc"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dequeue'd Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oY5-lg-J5Q">
-                                <rect key="frame" x="34" y="226" width="144" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bt-cp-RdE">
-                                <rect key="frame" x="519" y="222" width="62" height="30"/>
-                                <state key="normal" title="Dequeue">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="dequeueButton:" destination="UQq-yQ-UOc" eventType="touchUpInside" id="BnO-XF-fEn"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack View:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-sX-zcR">
-                                <rect key="frame" x="255" y="309" width="89.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter string to push to Stack" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Za-VA-ERg">
-                                <rect key="frame" x="6" y="394" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="cgS-8v-ZVP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIU-8q-4fi">
-                                <rect key="frame" x="502" y="394" width="95" height="30"/>
-                                <state key="normal" title="Push to Stack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushToStack:" destination="UQq-yQ-UOc" eventType="touchUpInside" id="mio-8n-FzH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZN-Bm-mos">
-                                <rect key="frame" x="496" y="460" width="106" height="30"/>
-                                <state key="normal" title="Pop from Stack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="popFromStack:" destination="UQq-yQ-UOc" eventType="touchUpInside" id="kVG-SA-dnk"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Contents here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDf-fE-6UV">
-                                <rect key="frame" x="208" y="350" width="183" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popped Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-Np-LRE">
-                                <rect key="frame" x="47" y="464" width="118" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oY5-lg-J5Q" firstAttribute="centerX" secondItem="ADk-PH-1zh" secondAttribute="centerX" id="0M6-lL-PEb"/>
-                            <constraint firstItem="DIU-8q-4fi" firstAttribute="centerX" secondItem="7bt-cp-RdE" secondAttribute="centerX" id="2UG-DJ-js7"/>
-                            <constraint firstAttribute="trailing" secondItem="lZ8-4y-Jj0" secondAttribute="trailing" id="5h3-V1-IB7"/>
-                            <constraint firstItem="JZN-Bm-mos" firstAttribute="centerX" secondItem="DIU-8q-4fi" secondAttribute="centerX" id="60E-yr-tQU"/>
-                            <constraint firstItem="7Za-VA-ERg" firstAttribute="top" secondItem="VDf-fE-6UV" secondAttribute="bottom" constant="20" id="6Rf-Tt-ygE"/>
-                            <constraint firstItem="VDf-fE-6UV" firstAttribute="top" secondItem="Gtl-sX-zcR" secondAttribute="bottom" constant="20" id="ExW-uL-udZ"/>
-                            <constraint firstItem="oY5-lg-J5Q" firstAttribute="top" secondItem="ADk-PH-1zh" secondAttribute="bottom" constant="40" id="JjF-dn-2iq"/>
-                            <constraint firstItem="7bt-cp-RdE" firstAttribute="centerY" secondItem="oY5-lg-J5Q" secondAttribute="centerY" id="Lp6-td-P82"/>
-                            <constraint firstItem="lZ8-4y-Jj0" firstAttribute="centerX" secondItem="bGj-rj-Bas" secondAttribute="centerX" id="Lwm-IX-iFA"/>
-                            <constraint firstItem="DIU-8q-4fi" firstAttribute="centerY" secondItem="7Za-VA-ERg" secondAttribute="centerY" id="NNd-fX-rTs"/>
-                            <constraint firstItem="Gtl-sX-zcR" firstAttribute="top" secondItem="oY5-lg-J5Q" secondAttribute="bottom" constant="60" id="Nif-2c-WDg"/>
-                            <constraint firstItem="ezq-tv-2PR" firstAttribute="centerY" secondItem="ADk-PH-1zh" secondAttribute="centerY" id="Rgp-Us-Z6B"/>
-                            <constraint firstItem="7bt-cp-RdE" firstAttribute="top" secondItem="ezq-tv-2PR" secondAttribute="bottom" constant="38" id="YZH-af-Uh8"/>
-                            <constraint firstItem="7Za-VA-ERg" firstAttribute="centerX" secondItem="ADk-PH-1zh" secondAttribute="centerX" id="ZVM-WR-wDi"/>
-                            <constraint firstItem="Gtl-sX-zcR" firstAttribute="centerX" secondItem="bGj-rj-Bas" secondAttribute="centerX" id="aAk-ZS-0UO"/>
-                            <constraint firstItem="OnW-hl-LRE" firstAttribute="centerX" secondItem="bGj-rj-Bas" secondAttribute="centerX" id="fl5-z4-YWj"/>
-                            <constraint firstItem="OnW-hl-LRE" firstAttribute="top" secondItem="6ia-nK-eF2" secondAttribute="bottom" constant="8" id="gfs-On-lul"/>
-                            <constraint firstItem="VDf-fE-6UV" firstAttribute="centerX" secondItem="bGj-rj-Bas" secondAttribute="centerX" id="jM6-Ap-W2J"/>
-                            <constraint firstItem="7bt-cp-RdE" firstAttribute="centerX" secondItem="ezq-tv-2PR" secondAttribute="centerX" id="l4Y-dN-GvF"/>
-                            <constraint firstItem="LE0-Np-LRE" firstAttribute="centerX" secondItem="7Za-VA-ERg" secondAttribute="centerX" id="mcc-bB-DKs"/>
-                            <constraint firstItem="lZ8-4y-Jj0" firstAttribute="top" secondItem="OnW-hl-LRE" secondAttribute="bottom" constant="40" id="n7l-bZ-KXH"/>
-                            <constraint firstItem="ADk-PH-1zh" firstAttribute="top" secondItem="lZ8-4y-Jj0" secondAttribute="bottom" constant="40" id="nQT-7o-Dw1"/>
-                            <constraint firstItem="ADk-PH-1zh" firstAttribute="leading" secondItem="bGj-rj-Bas" secondAttribute="leading" constant="20" id="oDz-X9-Zlo"/>
-                            <constraint firstAttribute="trailing" secondItem="ezq-tv-2PR" secondAttribute="trailing" constant="20" id="q5l-Ke-wvO"/>
-                            <constraint firstItem="LE0-Np-LRE" firstAttribute="top" secondItem="7Za-VA-ERg" secondAttribute="bottom" constant="40" id="q7n-EH-4ND"/>
-                            <constraint firstItem="7Za-VA-ERg" firstAttribute="top" secondItem="Gtl-sX-zcR" secondAttribute="bottom" constant="20" id="uTa-VM-nIC"/>
-                            <constraint firstItem="JZN-Bm-mos" firstAttribute="centerY" secondItem="LE0-Np-LRE" secondAttribute="centerY" id="v1A-vd-inu"/>
-                            <constraint firstItem="lZ8-4y-Jj0" firstAttribute="leading" secondItem="bGj-rj-Bas" secondAttribute="leading" id="vlu-5b-3ze"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="uTa-VM-nIC"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="dequeuedValueLabel" destination="oY5-lg-J5Q" id="61Q-Ix-QfE"/>
-                        <outlet property="poppedValueLabel" destination="LE0-Np-LRE" id="6cl-uI-u3O"/>
-                        <outlet property="queueDisplay" destination="lZ8-4y-Jj0" id="lIb-GW-NZY"/>
-                        <outlet property="queueField" destination="ADk-PH-1zh" id="nDX-eU-HAj"/>
-                        <outlet property="stackDisplay" destination="VDf-fE-6UV" id="xHd-8z-6sZ"/>
-                        <outlet property="stackEntry" destination="7Za-VA-ERg" id="euH-6N-dVh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2H-qZ-gna" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1770" y="255"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Wb-Rw-4mV">
             <objects>
@@ -284,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvA-RH-d7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="255"/>
+            <point key="canvasLocation" x="322" y="255"/>
         </scene>
     </scenes>
 </document>

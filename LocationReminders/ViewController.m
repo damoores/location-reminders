@@ -121,6 +121,8 @@
     //currentLocation pressed
     [self showCurrentLocation];
     [self.mapView setMapType:MKMapTypeStandard];
+    self.mapCommentLabel.text = @"";
+
 
 
 }
