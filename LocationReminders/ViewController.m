@@ -20,6 +20,8 @@
 - (IBAction)location3:(id)sender;
 - (IBAction)currenLocation:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *mapCommentLabel;
+
 @property (strong, nonatomic)CLLocationManager *locationManager;
 
 
@@ -90,6 +92,7 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
     [self.mapView setRegion:region];
     [self.mapView setMapType:MKMapTypeSatellite];
+    self.mapCommentLabel.text = @"Airplane Boneyard - Tuscon, AZ";
 
 }
 
@@ -99,6 +102,8 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 120, 120);
     [self.mapView setRegion:region];
     [self.mapView setMapType:MKMapTypeSatellite];
+    self.mapCommentLabel.text = @"Memphis, TN";
+
 
 }
 
@@ -108,6 +113,7 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 200, 200);
     [self.mapView setRegion:region];
     [self.mapView setMapType:MKMapTypeSatellite];
+    self.mapCommentLabel.text = @"El Segundo, CA";
 
 }
 

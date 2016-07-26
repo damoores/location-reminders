@@ -67,33 +67,49 @@
                                     <segue destination="UQq-yQ-UOc" kind="show" id="kuy-Fo-kfo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-7o-kam">
+                                <rect key="frame" x="0.0" y="112" width="600" height="0.0"/>
+                                <color key="backgroundColor" red="0.86420039733333343" green="0.84612333382837079" blue="0.85046721315984453" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YcZ-Pt-5vh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CFE-xG-KmV"/>
+                            <constraint firstItem="5Ci-7o-kam" firstAttribute="centerY" secondItem="URj-J5-gAT" secondAttribute="centerY" id="Cbi-yv-EcO"/>
                             <constraint firstItem="zjg-KH-Pae" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="bottom" constant="20" id="CkI-wf-qct"/>
                             <constraint firstItem="052-EI-2sI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Flm-MX-WEM"/>
+                            <constraint firstItem="5Ci-7o-kam" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L0a-rt-lAd"/>
                             <constraint firstItem="URj-J5-gAT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Mk9-qM-MW2"/>
                             <constraint firstAttribute="trailing" secondItem="YcZ-Pt-5vh" secondAttribute="trailing" constant="20" id="NI8-p4-z5a"/>
                             <constraint firstItem="YcZ-Pt-5vh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="Sgn-9v-qR6"/>
+                            <constraint firstItem="5Ci-7o-kam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WAU-6T-yx2"/>
                             <constraint firstItem="zjg-KH-Pae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WbG-G5-dHp"/>
                             <constraint firstItem="Ucj-Dc-VlV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Wed-SR-rfh"/>
                             <constraint firstItem="URj-J5-gAT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wt0-KI-qRT"/>
                             <constraint firstItem="Ucj-Dc-VlV" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="bottom" constant="20" id="aiR-an-1yj"/>
                             <constraint firstItem="Uu8-5X-ms1" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="bottom" constant="20" id="bjz-hW-Fih"/>
                             <constraint firstItem="YcZ-Pt-5vh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ecT-f2-Ng8"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ci-7o-kam" secondAttribute="trailing" id="gSh-tA-gJT"/>
                             <constraint firstAttribute="trailing" secondItem="052-EI-2sI" secondAttribute="trailing" constant="20" id="jb2-wY-xqs"/>
                             <constraint firstAttribute="trailing" secondItem="Uu8-5X-ms1" secondAttribute="trailing" constant="20" id="juQ-Y2-nhN"/>
                             <constraint firstItem="URj-J5-gAT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qXc-1Z-tM3"/>
+                            <constraint firstItem="5Ci-7o-kam" firstAttribute="top" secondItem="YcZ-Pt-5vh" secondAttribute="top" constant="8" id="xuA-qK-DZe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Wt0-KI-qRT"/>
+                                <exclude reference="Cbi-yv-EcO"/>
+                                <exclude reference="L0a-rt-lAd"/>
+                                <exclude reference="gSh-tA-gJT"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="YeD-iI-1G4"/>
                     <connections>
+                        <outlet property="mapCommentLabel" destination="5Ci-7o-kam" id="2oD-nM-Hug"/>
                         <outlet property="mapView" destination="YcZ-Pt-5vh" id="GKk-Ad-NvI"/>
                     </connections>
                 </viewController>
