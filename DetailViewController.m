@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *titleLabel;
 
 @end
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     NSLog(@"Title: %@", self.annotationTitle);
     NSLog(@"Co-ords: %f, %f", self.coordinate.latitude, self.coordinate.longitude);
+    self.titleLabel.text = self.annotationTitle;
 
 }
 

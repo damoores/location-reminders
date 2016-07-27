@@ -85,8 +85,8 @@
 		701C1E6E1D46823200F62661 = {
 			isa = PBXGroup;
 			children = (
-				701C1EA61D47E03C00F62661 /* DetailViewController.h */,
-				701C1EA71D47E03C00F62661 /* DetailViewController.m */,
+				701C1EB31D48F4E600F62661 /* New Group1 */,
+				701C1EB21D48F4D900F62661 /* New Group */,
 				701C1E981D4694E600F62661 /* MapKit.framework */,
 				701C1E911D46861200F62661 /* Bolts.framework */,
 				701C1E921D46861200F62661 /* Parse.framework */,
@@ -159,6 +159,22 @@
 				701C1E881D46823200F62661 /* LaunchScreen.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		701C1EB21D48F4D900F62661 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		701C1EB31D48F4E600F62661 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				701C1EA61D47E03C00F62661 /* DetailViewController.h */,
+				701C1EA71D47E03C00F62661 /* DetailViewController.m */,
+			);
+			name = "New Group1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
