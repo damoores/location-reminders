@@ -45,19 +45,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter two words above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-tc-gdR">
                                 <rect key="frame" x="213" y="464" width="174.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click button to see if they" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-2d-jV1">
                                 <rect key="frame" x="202" y="493" width="195.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="are anagrams." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-gm-BCB">
                                 <rect key="frame" x="245.5" y="522" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="300" y="112" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="0.86420039733333343" green="0.84612333382837079" blue="0.85046721315984453" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -245,33 +245,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coming-soon" translatesAutoresizingMaskIntoConstraints="NO" id="wg7-8A-fLA">
-                                <rect key="frame" x="0.0" y="64" width="600" height="232"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eyW-qi-1E8">
-                                <rect key="frame" x="178" y="210" width="244" height="180"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="GdD-Mc-HbS"/>
-                                    <constraint firstAttribute="width" constant="244" id="MC9-co-RvS"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5m-b0-Zub">
+                                <rect key="frame" x="253" y="285" width="93" height="30"/>
+                                <state key="normal" title="Set Reminder">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="setButtonSelected:" destination="hgb-VI-6qL" eventType="touchUpInside" id="Prl-Wb-jhx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alert Radius" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TB7-vO-aC4">
+                                <rect key="frame" x="251" y="235" width="99.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-Mn-Atj">
+                                <rect key="frame" x="238" y="185" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="eyW-qi-1E8" firstAttribute="centerY" secondItem="OdN-C2-oRL" secondAttribute="centerY" id="GQ4-zV-t5M"/>
-                            <constraint firstItem="wg7-8A-fLA" firstAttribute="leading" secondItem="OdN-C2-oRL" secondAttribute="leading" id="SfO-bq-INB"/>
-                            <constraint firstItem="wg7-8A-fLA" firstAttribute="top" secondItem="MdW-oP-Oh8" secondAttribute="bottom" id="Y3c-Tl-9zI"/>
-                            <constraint firstItem="2xs-kV-Gv4" firstAttribute="top" secondItem="wg7-8A-fLA" secondAttribute="bottom" constant="304" id="cEY-h1-1ts"/>
-                            <constraint firstItem="eyW-qi-1E8" firstAttribute="centerX" secondItem="OdN-C2-oRL" secondAttribute="centerX" id="meU-Hx-ljH"/>
-                            <constraint firstAttribute="trailing" secondItem="wg7-8A-fLA" secondAttribute="trailing" id="scB-lN-kYA"/>
+                            <constraint firstItem="C5m-b0-Zub" firstAttribute="centerY" secondItem="OdN-C2-oRL" secondAttribute="centerY" id="0bK-2h-vo3"/>
+                            <constraint firstItem="7gu-Mn-Atj" firstAttribute="centerX" secondItem="OdN-C2-oRL" secondAttribute="centerX" id="2yb-qy-l1E"/>
+                            <constraint firstItem="TB7-vO-aC4" firstAttribute="centerX" secondItem="OdN-C2-oRL" secondAttribute="centerX" id="MZr-U5-kup"/>
+                            <constraint firstItem="TB7-vO-aC4" firstAttribute="top" secondItem="7gu-Mn-Atj" secondAttribute="bottom" constant="20" id="NEQ-tx-Bcv"/>
+                            <constraint firstItem="C5m-b0-Zub" firstAttribute="centerX" secondItem="OdN-C2-oRL" secondAttribute="centerX" id="e0v-1e-6MS"/>
+                            <constraint firstItem="C5m-b0-Zub" firstAttribute="top" secondItem="TB7-vO-aC4" secondAttribute="bottom" constant="20" id="yWY-pC-AIK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="eyW-qi-1E8" id="LqA-Go-XO5"/>
+                        <outlet property="nameField" destination="7gu-Mn-Atj" id="Qng-bD-raa"/>
+                        <outlet property="radiusField" destination="TB7-vO-aC4" id="cyF-mB-X1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdH-7g-kka" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,7 +333,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Coming-soon" width="600" height="230"/>
         <image name="anagram" width="495" height="495"/>
         <image name="no" width="499" height="356"/>
         <image name="yes" width="400" height="400"/>
