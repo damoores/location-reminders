@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Anagram View Controller-->
+        <!--Anagram Tester v1.2-->
         <scene sceneID="x6b-yu-gE4">
             <objects>
-                <viewController id="ey3-yT-jZk" customClass="AnagramViewController" sceneMemberID="viewController">
+                <viewController title="Anagram Tester v1.2" id="ey3-yT-jZk" customClass="AnagramViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="27v-IX-QtL"/>
                         <viewControllerLayoutGuide type="bottom" id="CvT-D4-xdk"/>
@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOR-fC-f6y">
-                                <rect key="frame" x="225.5" y="244" width="150" height="150"/>
+                                <rect key="frame" x="225" y="244" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="SfQ-RH-FFa"/>
                                     <constraint firstAttribute="height" constant="150" id="dqA-t4-0FL"/>
@@ -38,18 +38,51 @@
                                 <state key="normal" backgroundImage="anagram">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="canHazAnagramSelected:" destination="ey3-yT-jZk" eventType="touchUpInside" id="u2F-bP-Eiz"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter two words above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-tc-gdR">
+                                <rect key="frame" x="213" y="414" width="174.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click button to see if they" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-2d-jV1">
+                                <rect key="frame" x="202" y="443" width="195.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="are anagrams." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-gm-BCB">
+                                <rect key="frame" x="245.5" y="472" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gwe-tc-gdR" firstAttribute="top" secondItem="pOR-fC-f6y" secondAttribute="bottom" constant="20" id="Jt5-Va-png"/>
                             <constraint firstItem="pOR-fC-f6y" firstAttribute="top" secondItem="NoI-E5-tet" secondAttribute="bottom" constant="40" id="Kpw-yX-tnJ"/>
+                            <constraint firstItem="y8y-2d-jV1" firstAttribute="top" secondItem="gwe-tc-gdR" secondAttribute="bottom" constant="8" id="ZaU-ew-xLD"/>
+                            <constraint firstItem="gwe-tc-gdR" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="fHc-wC-yjk"/>
+                            <constraint firstItem="y8y-2d-jV1" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="h2C-nD-maj"/>
                             <constraint firstItem="NoI-E5-tet" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="ifa-aN-4xH"/>
                             <constraint firstItem="caB-f6-9Zn" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="mqi-ML-INb"/>
                             <constraint firstItem="caB-f6-9Zn" firstAttribute="top" secondItem="27v-IX-QtL" secondAttribute="bottom" constant="40" id="pe0-pR-b2J"/>
                             <constraint firstItem="NoI-E5-tet" firstAttribute="top" secondItem="caB-f6-9Zn" secondAttribute="bottom" constant="40" id="sIl-3I-C1d"/>
                             <constraint firstItem="pOR-fC-f6y" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="vsM-3U-Haa"/>
+                            <constraint firstItem="oLU-gm-BCB" firstAttribute="top" secondItem="y8y-2d-jV1" secondAttribute="bottom" constant="8" id="zgp-uK-faL"/>
+                            <constraint firstItem="oLU-gm-BCB" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="zzP-5f-1BU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstWordField" destination="caB-f6-9Zn" id="CaS-4u-Vyd"/>
+                        <outlet property="secondWordField" destination="NoI-E5-tet" id="fiW-ek-c12"/>
+                        <segue destination="o9t-yC-ZcO" kind="show" identifier="YesViewController" id="Dnk-bR-ija"/>
+                        <segue destination="Mhe-5t-Fks" kind="show" identifier="NoViewController" id="bQ2-YD-pWn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqv-Wd-Ggo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,6 +204,35 @@
             </objects>
             <point key="canvasLocation" x="1087" y="255"/>
         </scene>
+        <!--OH NOES-->
+        <scene sceneID="136-ud-EQk">
+            <objects>
+                <viewController storyboardIdentifier="NoViewController" title="OH NOES" id="Mhe-5t-Fks" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YU0-oD-DRa"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8t-hd-Teb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oxz-JX-hQz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="ZDK-xU-BLv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZDK-xU-BLv" firstAttribute="leading" secondItem="Oxz-JX-hQz" secondAttribute="leading" id="4Lv-MQ-Icz"/>
+                            <constraint firstAttribute="trailing" secondItem="ZDK-xU-BLv" secondAttribute="trailing" id="S86-5R-vHD"/>
+                            <constraint firstItem="ZDK-xU-BLv" firstAttribute="top" secondItem="YU0-oD-DRa" secondAttribute="bottom" id="gMg-Ii-EFv"/>
+                            <constraint firstItem="O8t-hd-Teb" firstAttribute="top" secondItem="ZDK-xU-BLv" secondAttribute="bottom" id="xhh-eB-Lyl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFX-qT-RFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="-451"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="w2v-Gj-TuY">
             <objects>
@@ -182,12 +244,52 @@
                     <view key="view" contentMode="scaleToFill" id="OdN-C2-oRL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coming-soon" translatesAutoresizingMaskIntoConstraints="NO" id="wg7-8A-fLA">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wg7-8A-fLA" firstAttribute="leading" secondItem="OdN-C2-oRL" secondAttribute="leading" id="SfO-bq-INB"/>
+                            <constraint firstItem="wg7-8A-fLA" firstAttribute="top" secondItem="MdW-oP-Oh8" secondAttribute="bottom" id="Y3c-Tl-9zI"/>
+                            <constraint firstItem="2xs-kV-Gv4" firstAttribute="top" secondItem="wg7-8A-fLA" secondAttribute="bottom" id="jTW-Rm-AXM"/>
+                            <constraint firstAttribute="trailing" secondItem="wg7-8A-fLA" secondAttribute="trailing" id="scB-lN-kYA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdH-7g-kka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765" y="255"/>
+        </scene>
+        <!--YES!!-->
+        <scene sceneID="QYx-tu-vtD">
+            <objects>
+                <viewController storyboardIdentifier="Yes" title="YES!!" id="o9t-yC-ZcO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="96C-0S-lRO"/>
+                        <viewControllerLayoutGuide type="bottom" id="CNc-y2-9qH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xgT-Dn-Cp5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes" translatesAutoresizingMaskIntoConstraints="NO" id="zja-dr-2Cg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zja-dr-2Cg" firstAttribute="leading" secondItem="xgT-Dn-Cp5" secondAttribute="leading" id="4Kh-Gl-5wj"/>
+                            <constraint firstItem="CNc-y2-9qH" firstAttribute="top" secondItem="zja-dr-2Cg" secondAttribute="bottom" id="7Fs-bu-pqV"/>
+                            <constraint firstItem="zja-dr-2Cg" firstAttribute="top" secondItem="96C-0S-lRO" secondAttribute="bottom" id="8YO-cS-3MO"/>
+                            <constraint firstAttribute="trailing" secondItem="zja-dr-2Cg" secondAttribute="trailing" id="kia-kf-Mtm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijN-Bl-dnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="-451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Wb-Rw-4mV">
@@ -209,6 +311,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Coming-soon" width="600" height="230"/>
         <image name="anagram" width="495" height="495"/>
+        <image name="no" width="499" height="356"/>
+        <image name="yes" width="400" height="400"/>
     </resources>
 </document>

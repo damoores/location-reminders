@@ -48,10 +48,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    [self.mapView dropMultiplePins];
     [[LocationController sharedController]setDelegate:self];
     [[[LocationController sharedController]locationManager]startUpdatingLocation];
 
-    [self.mapView dropMultiplePins];
 
 }
 
