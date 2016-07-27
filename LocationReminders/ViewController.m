@@ -9,9 +9,13 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import "NSMutableArray+Additions.h"
+#import "LocationController.h"
+#import "DetailViewController.h"
+#import "MKMapView+Additions.h"
+
 @import MapKit;
 
-@interface ViewController ()
+@interface ViewController ()<MKMapViewDelegate, LocationControllerDelegete>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -22,7 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *mapCommentLabel;
 
-@property (strong, nonatomic)CLLocationManager *locationManager;
+- (IBAction)handleLongPress:(UILongPressGestureRecognizer *)sender;
 
 
 @end
@@ -34,37 +38,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self requestPermissions];
+    [self.mapView setDelegate:self];
     [self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.509 blue:0.2509 alpha:1.0]];
     [self.mapView.layer setCornerRadius:10.0];
 
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    
-//    testObject[@"foo"] = @"bar";
-//    
-//    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        NSLog(@"Succeeded: %i, Error%@", succeeded, error);
-//    }];
-    
-//    PFQuery *query = [PFQuery queryWithClassName:@"TestObject"];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        if (!error) {
-//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                NSLog(@"objects: %@", objects);
-//            }];
-//        }
-//            }];
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:YES];
-       
+    [super viewWillAppear:YES];
+    [[LocationController sharedController]setDelegate:self];
+    [[[LocationController sharedController]locationManager]startUpdatingLocation];
+
+    [self.mapView dropMultiplePins];
+
 }
-
-
 
 
 - (void) showCurrentLocation
@@ -73,13 +62,6 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
     [self.mapView setRegion:region];
 }
-- (void)requestPermissions
-{
-    [self setLocationManager:[[CLLocationManager alloc]init]];
-    [self.locationManager requestAlwaysAuthorization];
-     
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -125,6 +107,54 @@
 
 
 
+}
+
+- (IBAction)handleLongPress:(UILongPressGestureRecognizer *)sender {
+    
+    [self.mapView longPressDrop:sender];
+}
+
+
+- (void)locationControllerDidUpdateLocation:(CLLocation *)location
+{
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0) animated:YES];
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(nonnull id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {return nil;}
+    
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"annoteView"];
+    if (!annotationView)
+    {
+        annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"annoteView"];
+        
+    }
+    NSArray *colors = [[NSArray alloc] initWithObjects:[UIColor redColor],[UIColor blueColor],[UIColor greenColor],[UIColor magentaColor], [UIColor yellowColor], [UIColor purpleColor], [UIColor orangeColor], nil];
+    
+    annotationView.canShowCallout = YES;
+    annotationView.pinTintColor = colors[arc4random_uniform(6)];
+    UIButton *rightCalloutButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationView.rightCalloutAccessoryView = rightCalloutButton;
+    return annotationView;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DetailViewController"])
+    {
+        if ([sender isKindOfClass:[MKAnnotationView class]]) {
+            MKAnnotationView *annotationView = (MKAnnotationView *)sender;
+            DetailViewController *detailViewController = (DetailViewController *)segue.destinationViewController;
+            detailViewController.annotationTitle = annotationView.annotation.title;
+            detailViewController.coordinate = annotationView.annotation.coordinate;
+        }
+    }
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"DetailViewController" sender:view];
 }
 
 @end

@@ -6,6 +6,55 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Anagram View Controller-->
+        <scene sceneID="x6b-yu-gE4">
+            <objects>
+                <viewController id="ey3-yT-jZk" customClass="AnagramViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="27v-IX-QtL"/>
+                        <viewControllerLayoutGuide type="bottom" id="CvT-D4-xdk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="re2-2V-UX8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter First Word Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caB-f6-9Zn">
+                                <rect key="frame" x="220" y="104" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Second Word Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-E5-tet">
+                                <rect key="frame" x="209" y="174" width="181" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOR-fC-f6y">
+                                <rect key="frame" x="225.5" y="244" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="SfQ-RH-FFa"/>
+                                    <constraint firstAttribute="height" constant="150" id="dqA-t4-0FL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="anagram">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pOR-fC-f6y" firstAttribute="top" secondItem="NoI-E5-tet" secondAttribute="bottom" constant="40" id="Kpw-yX-tnJ"/>
+                            <constraint firstItem="NoI-E5-tet" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="ifa-aN-4xH"/>
+                            <constraint firstItem="caB-f6-9Zn" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="mqi-ML-INb"/>
+                            <constraint firstItem="caB-f6-9Zn" firstAttribute="top" secondItem="27v-IX-QtL" secondAttribute="bottom" constant="40" id="pe0-pR-b2J"/>
+                            <constraint firstItem="NoI-E5-tet" firstAttribute="top" secondItem="caB-f6-9Zn" secondAttribute="bottom" constant="40" id="sIl-3I-C1d"/>
+                            <constraint firstItem="pOR-fC-f6y" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="vsM-3U-Haa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqv-Wd-Ggo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-451"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,6 +69,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcZ-Pt-5vh">
                                 <rect key="frame" x="20" y="104" width="560" height="420"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VSg-9C-xnr" appends="YES" id="iFU-JI-c53"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucj-Dc-VlV">
                                 <rect key="frame" x="20" y="544" width="70" height="30"/>
@@ -96,15 +149,45 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="YeD-iI-1G4"/>
+                    <navigationItem key="navigationItem" id="YeD-iI-1G4">
+                        <barButtonItem key="rightBarButtonItem" title="Anagrams!" id="2Mz-2k-z4d">
+                            <connections>
+                                <segue destination="ey3-yT-jZk" kind="show" id="ZyX-iX-ncx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapCommentLabel" destination="5Ci-7o-kam" id="2oD-nM-Hug"/>
                         <outlet property="mapView" destination="YcZ-Pt-5vh" id="GKk-Ad-NvI"/>
+                        <segue destination="hgb-VI-6qL" kind="show" identifier="DetailViewController" id="9Qa-19-RbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="VSg-9C-xnr">
+                    <connections>
+                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="rLy-0X-jhs"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1087" y="255"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="w2v-Gj-TuY">
+            <objects>
+                <viewController id="hgb-VI-6qL" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MdW-oP-Oh8"/>
+                        <viewControllerLayoutGuide type="bottom" id="2xs-kV-Gv4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OdN-C2-oRL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdH-7g-kka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="255"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Wb-Rw-4mV">
@@ -125,4 +208,7 @@
             <point key="canvasLocation" x="322" y="255"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="anagram" width="495" height="495"/>
+    </resources>
 </document>
