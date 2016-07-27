@@ -112,6 +112,7 @@
 - (IBAction)handleLongPress:(UILongPressGestureRecognizer *)sender {
     
     [self.mapView longPressDrop:sender];
+
 }
 
 
@@ -128,7 +129,6 @@
     if (!annotationView)
     {
         annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"annoteView"];
-        
     }
     NSArray *colors = [[NSArray alloc] initWithObjects:[UIColor redColor],[UIColor blueColor],[UIColor greenColor],[UIColor magentaColor], [UIColor yellowColor], [UIColor purpleColor], [UIColor orangeColor], nil];
     
