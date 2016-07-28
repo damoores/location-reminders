@@ -53,7 +53,13 @@
     [[LocationController sharedController]setDelegate:self];
     [[[LocationController sharedController]locationManager]startUpdatingLocation];
 
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    [self login];
+    
 }
 
 - (void) showCurrentLocation
