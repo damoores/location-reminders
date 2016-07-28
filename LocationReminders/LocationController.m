@@ -45,5 +45,15 @@
     [self setLocation:[locations lastObject]];
 }
 
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    NSLog(@"User did enter region");
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    notification.alertTitle = @"You have entered the Matrix...";
+    notification.alertBody = @"🕊The PokéMonGO Matrix....💊";
+    
+    [[UIApplication sharedApplication]presentLocalNotificationNow:notification];
+}
+
 
 @end
