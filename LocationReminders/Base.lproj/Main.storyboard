@@ -285,6 +285,7 @@
                     <connections>
                         <outlet property="nameField" destination="7gu-Mn-Atj" id="Qng-bD-raa"/>
                         <outlet property="radiusField" destination="TB7-vO-aC4" id="cyF-mB-X1p"/>
+                        <outlet property="setButton" destination="C5m-b0-Zub" id="zRv-ih-1n6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdH-7g-kka" userLabel="First Responder" sceneMemberID="firstResponder"/>

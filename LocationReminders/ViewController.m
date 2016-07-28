@@ -12,6 +12,7 @@
 #import "LocationController.h"
 #import "DetailViewController.h"
 #import "MKMapView+Additions.h"
+#import "Reminder.h"
 
 @import MapKit;
 @import ParseUI;
@@ -42,6 +43,24 @@
     [self.mapView setDelegate:self];
     [self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.509 blue:0.2509 alpha:1.0]];
     [self.mapView.layer setCornerRadius:10.0];
+    PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+    __weak typeof(self) weakSelf = self;
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error loading reminders: %@",error);
+        }else {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            for (Reminder *reminder in objects) {
+                CLLocationCoordinate2D center = CLLocationCoordinate2DMake(reminder.location.latitude, reminder.location.longitude);
+                if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
+                    CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:center radius:reminder.radius.floatValue identifier:reminder.name];
+                    [[[LocationController sharedController]locationManager]startMonitoringForRegion:region];
+                    MKCircle *circle = [MKCircle circleWithCenterCoordinate:center radius:reminder.radius.floatValue];
+                    [strongSelf.mapView addOverlay:circle];
+                }
+            }
+        }
+    }];
 
     
 }
@@ -65,7 +84,7 @@
 - (void) showCurrentLocation
 {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.location.coordinate.latitude, self.mapView.userLocation.location.coordinate.longitude);
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000);
     [self.mapView setRegion:region];
 }
 
@@ -124,7 +143,7 @@
 
 - (void)locationControllerDidUpdateLocation:(CLLocation *)location
 {
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, 500.0, 500.0) animated:YES];
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, 1000.0, 1000.0) animated:YES];
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(nonnull id<MKAnnotation>)annotation

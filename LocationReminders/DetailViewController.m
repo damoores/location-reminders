@@ -12,6 +12,7 @@
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *radiusField;
+@property (weak, nonatomic) IBOutlet UIButton *setButton;
 
 - (IBAction)setButtonSelected:(id)sender;
 
@@ -33,6 +34,7 @@
 
 - (IBAction)setButtonSelected:(id)sender {
     
+    [self.setButton setEnabled:NO];
     NSString *reminderName = self.nameField.text;
     NSNumber *radius = [NSNumber numberWithFloat:self.radiusField.text.floatValue];
     
@@ -53,8 +55,9 @@
                 strongSelf.completion([MKCircle circleWithCenterCoordinate:strongSelf.coordinate radius:radius.floatValue]);
             }
         }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }];
-    
     
 }
 

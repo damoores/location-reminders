@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Reminder.h"
+#import "LocationController.h"
+
+@import CoreLocation;
 
 @interface AppDelegate ()
 
@@ -23,10 +27,10 @@
         configuration.clientKey = @"myMasterKey";
         configuration.server = @"https://location-reminders-server-demo.herokuapp.com/parse";
     }]];
-    [self registerForNotification];
+    [self registerForNotification];    
     return YES;
 }
-
+                                        
 - (void)registerForNotification
 {
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
