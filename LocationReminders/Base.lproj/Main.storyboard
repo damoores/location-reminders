@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Anagram Tester v1.2-->
+        <!--String Value Extractor-->
         <scene sceneID="x6b-yu-gE4">
             <objects>
-                <viewController title="Anagram Tester v1.2" id="ey3-yT-jZk" customClass="AnagramViewController" sceneMemberID="viewController">
+                <viewController title="String Value Extractor" id="ey3-yT-jZk" customClass="AnagramViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="27v-IX-QtL"/>
                         <viewControllerLayoutGuide type="bottom" id="CvT-D4-xdk"/>
@@ -18,18 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter First Word Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caB-f6-9Zn">
-                                <rect key="frame" x="220" y="104" width="160" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Second Word Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-E5-tet">
-                                <rect key="frame" x="209" y="174" width="181" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter String Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caB-f6-9Zn">
+                                <rect key="frame" x="233" y="104" width="133" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOR-fC-f6y">
-                                <rect key="frame" x="200" y="244" width="200" height="200"/>
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="SfQ-RH-FFa"/>
                                     <constraint firstAttribute="height" constant="200" id="dqA-t4-0FL"/>
@@ -42,20 +37,26 @@
                                     <action selector="canHazAnagramSelected:" destination="ey3-yT-jZk" eventType="touchUpInside" id="u2F-bP-Eiz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter two words above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-tc-gdR">
-                                <rect key="frame" x="213" y="464" width="174.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a string above." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-tc-gdR">
+                                <rect key="frame" x="221" y="420" width="157.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click button to see if they" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-2d-jV1">
-                                <rect key="frame" x="202" y="493" width="195.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click anagram kitty and she will calculate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-2d-jV1">
+                                <rect key="frame" x="159" y="449" width="281" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="are anagrams." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-gm-BCB">
-                                <rect key="frame" x="245.5" y="522" width="109" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the sum of any numerals conatined within." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-gm-BCB">
+                                <rect key="frame" x="155" y="475" width="289" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssS-v5-lkh">
+                                <rect key="frame" x="279" y="154" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,23 +64,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gwe-tc-gdR" firstAttribute="top" secondItem="pOR-fC-f6y" secondAttribute="bottom" constant="20" id="1KW-fo-NtB"/>
+                            <constraint firstItem="pOR-fC-f6y" firstAttribute="centerY" secondItem="re2-2V-UX8" secondAttribute="centerY" id="Bdl-da-ouH"/>
                             <constraint firstItem="gwe-tc-gdR" firstAttribute="top" secondItem="pOR-fC-f6y" secondAttribute="bottom" constant="20" id="Jt5-Va-png"/>
-                            <constraint firstItem="pOR-fC-f6y" firstAttribute="top" secondItem="NoI-E5-tet" secondAttribute="bottom" constant="40" id="Kpw-yX-tnJ"/>
+                            <constraint firstItem="ssS-v5-lkh" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="Tq6-dU-sYN"/>
                             <constraint firstItem="y8y-2d-jV1" firstAttribute="top" secondItem="gwe-tc-gdR" secondAttribute="bottom" constant="8" id="ZaU-ew-xLD"/>
                             <constraint firstItem="gwe-tc-gdR" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="fHc-wC-yjk"/>
                             <constraint firstItem="y8y-2d-jV1" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="h2C-nD-maj"/>
-                            <constraint firstItem="NoI-E5-tet" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="ifa-aN-4xH"/>
                             <constraint firstItem="caB-f6-9Zn" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="mqi-ML-INb"/>
                             <constraint firstItem="caB-f6-9Zn" firstAttribute="top" secondItem="27v-IX-QtL" secondAttribute="bottom" constant="40" id="pe0-pR-b2J"/>
-                            <constraint firstItem="NoI-E5-tet" firstAttribute="top" secondItem="caB-f6-9Zn" secondAttribute="bottom" constant="40" id="sIl-3I-C1d"/>
                             <constraint firstItem="pOR-fC-f6y" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="vsM-3U-Haa"/>
+                            <constraint firstItem="ssS-v5-lkh" firstAttribute="top" secondItem="caB-f6-9Zn" secondAttribute="bottom" constant="20" id="xxQ-NX-s6g"/>
                             <constraint firstItem="oLU-gm-BCB" firstAttribute="top" secondItem="y8y-2d-jV1" secondAttribute="bottom" constant="8" id="zgp-uK-faL"/>
                             <constraint firstItem="oLU-gm-BCB" firstAttribute="centerX" secondItem="re2-2V-UX8" secondAttribute="centerX" id="zzP-5f-1BU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jt5-Va-png"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="firstWordField" destination="caB-f6-9Zn" id="CaS-4u-Vyd"/>
-                        <outlet property="secondWordField" destination="NoI-E5-tet" id="fiW-ek-c12"/>
+                        <outlet property="valueLabel" destination="ssS-v5-lkh" id="hrJ-KN-qym"/>
                         <segue destination="o9t-yC-ZcO" kind="show" identifier="YesViewController" id="Dnk-bR-ija"/>
                         <segue destination="Mhe-5t-Fks" kind="show" identifier="NoViewController" id="bQ2-YD-pWn"/>
                     </connections>
@@ -183,7 +190,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="YeD-iI-1G4">
-                        <barButtonItem key="rightBarButtonItem" title="Anagrams!" id="2Mz-2k-z4d">
+                        <barButtonItem key="rightBarButtonItem" title="Fun with Numbers!!" id="2Mz-2k-z4d">
                             <connections>
                                 <segue destination="ey3-yT-jZk" kind="show" id="ZyX-iX-ncx"/>
                             </connections>

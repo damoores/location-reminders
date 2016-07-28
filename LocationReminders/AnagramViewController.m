@@ -11,7 +11,8 @@
 @interface AnagramViewController ()
 - (IBAction)canHazAnagramSelected:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *firstWordField;
-@property (weak, nonatomic) IBOutlet UITextField *secondWordField;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 
 @end
 
@@ -21,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.firstWordField setClearsOnBeginEditing:YES];
-    [self.secondWordField setClearsOnBeginEditing:YES];
+//    [self.secondWordField setClearsOnBeginEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,28 +43,17 @@
 - (IBAction)canHazAnagramSelected:(id)sender {
 
     NSString *firstWord = self.firstWordField.text;
-    NSString *secondWord = self.secondWordField.text;
+//    NSString *secondWord = self.secondWordField.text;
+    int counter = 0;
+    if (firstWord) {
     
-    if (firstWord && secondWord) {
-    
-        if (firstWord.length != secondWord.length) {
-            [self noNotHaz];
-        } else {
-        NSMutableSet *firstSet = [[NSMutableSet alloc]init];
-            NSMutableSet *secondSet = [[NSMutableSet alloc]init];
-            
             for (int i = 0; i<firstWord.length; i++)
             {
-                [firstSet addObject:@([firstWord characterAtIndex:i])];
-                [secondSet addObject:@([secondWord characterAtIndex:i])];
+                NSString *letter = [NSString stringWithFormat:@"%c",[firstWord characterAtIndex:i]];
+                counter = counter + [letter intValue];
             }
-
-            if ([firstSet isEqual:secondSet]) {
-                [self yesCanHaz];
-            } else {
-                [self noNotHaz];
-            }
-        }
+        NSString *result = [@(counter) stringValue];
+        self.valueLabel.text = result;
     }
 }
 
