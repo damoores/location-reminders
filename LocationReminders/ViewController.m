@@ -14,8 +14,9 @@
 #import "MKMapView+Additions.h"
 
 @import MapKit;
+@import ParseUI;
 
-@interface ViewController ()<MKMapViewDelegate, LocationControllerDelegete>
+@interface ViewController ()<MKMapViewDelegate, LocationControllerDelegete, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -54,7 +55,6 @@
 
 
 }
-
 
 - (void) showCurrentLocation
 {
@@ -146,8 +146,16 @@
         if ([sender isKindOfClass:[MKAnnotationView class]]) {
             MKAnnotationView *annotationView = (MKAnnotationView *)sender;
             DetailViewController *detailViewController = (DetailViewController *)segue.destinationViewController;
-            detailViewController.annotationTitle = annotationView.annotation.title;
+            detailViewController.reminderName = annotationView.annotation.title;
             detailViewController.coordinate = annotationView.annotation.coordinate;
+            
+            __weak typeof(self) weakSelf = self;
+            detailViewController.completion = ^(MKCircle *circle)
+            {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                [strongSelf.mapView removeAnnotation:annotationView.annotation];
+                [strongSelf.mapView addOverlay:circle];
+            };
         }
     }
 }
@@ -156,5 +164,52 @@
 {
     [self performSegueWithIdentifier:@"DetailViewController" sender:view];
 }
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKCircleRenderer *circleRenderer = [[MKCircleRenderer alloc]initWithOverlay:overlay];
+    circleRenderer.strokeColor = [UIColor blueColor];
+    circleRenderer.fillColor = [UIColor greenColor];
+    circleRenderer.alpha = 0.3;
+    return circleRenderer;
+}
+
+-(void)login
+{
+    if (![PFUser currentUser]) {
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc]init];
+        loginViewController.delegate = self;
+        loginViewController.signUpController.delegate = self;
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    } else {
+        [self setupAdditionalUI];
+    }
+}
+
+-(void)setupAdditionalUI
+{
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc]initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut)];
+    self.navigationItem.leftBarButtonItem = signOutButton;
+}
+
+-(void)signOut
+{
+    [PFUser logOut];
+    [self login];
+}
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setupAdditionalUI];
+}
+
+-(void) signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error
+{
+    NSLog(@"Error signing up user: %@",error);
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setupAdditionalUI];
+}
+
 
 @end

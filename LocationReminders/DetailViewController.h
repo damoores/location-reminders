@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 @import MapKit;
 
+typedef void(^DetailViewControllerCompletion)(MKCircle *circle);
+
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic)NSString *annotationTitle;
+@property (strong, nonatomic)NSString *reminderName;
 @property (nonatomic)CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic)NSNumber *radius;
+
+@property (copy, nonatomic)DetailViewControllerCompletion completion;
 
 @end
